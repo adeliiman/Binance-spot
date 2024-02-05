@@ -1,0 +1,78 @@
+2024-02-05 23:18:36,386 — app — INFO — binance started ... ... ...
+2024-02-05 23:18:38,097 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:18:41,217 — BinanceWebsocket — INFO — {"result":null,"id":1707162520815}
+2024-02-05 23:19:25,050 — app — INFO — binance stoped. ................
+2024-02-05 23:19:32,110 — app — INFO — binance started ... ... ...
+2024-02-05 23:19:33,849 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:19:35,380 — BinanceWebsocket — INFO — {"result":null,"id":1707162574985}
+2024-02-05 23:19:59,563 — producer — INFO —  [x] Sent 'Hello World!'
+2024-02-05 23:20:01,242 — __main__ — ERROR — (400, -2010, 'Filter failure: MAX_NUM_ALGO_ORDERS', {'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '58', 'Connection': 'keep-alive', 'Date': 'Mon, 05 Feb 2024 19:50:01 GMT', 'Server': 'nginx', 'x-mbx-uuid': 'd184a05e-b965-4090-8b88-c095677027a8', 'x-mbx-used-weight': '1', 'x-mbx-used-weight-1m': '1', 'x-mbx-order-count-10s': '1', 'x-mbx-order-count-1d': '27', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'", 'X-Content-Security-Policy': "default-src 'self'", 'X-WebKit-CSP': "default-src 'self'", 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Cache': 'Error from cloudfront', 'Via': '1.1 9d1f21fface75767578955e1853e754e.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'FRA60-P6', 'X-Amz-Cf-Id': 'EiNO3Ao6mS8EQUd51eGo-6kKO1klvbR_v1qc9mrQc3OFFo_zxwTbXQ=='}, None)
+Traceback (most recent call last):
+  File "/media/iman/mycode2/projects/Binance-spot/consumer.py", line 32, in callback
+    place_order(symbol=symbol, price=price, stopPrice=trigger_price, qty=qty, clientID=clientID)
+  File "/media/iman/mycode2/projects/Binance-spot/main.py", line 36, in place_order
+    response = client.new_order(**params)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/spot/_trade.py", line 68, in new_order
+    return self.sign_request("POST", url_path, params)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 84, in sign_request
+    return self.send_request(http_method, url_path, payload)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 119, in send_request
+    self._handle_exception(response)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 184, in _handle_exception
+    raise ClientError(
+binance.error.ClientError: (400, -2010, 'Filter failure: MAX_NUM_ALGO_ORDERS', {'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '58', 'Connection': 'keep-alive', 'Date': 'Mon, 05 Feb 2024 19:50:01 GMT', 'Server': 'nginx', 'x-mbx-uuid': 'd184a05e-b965-4090-8b88-c095677027a8', 'x-mbx-used-weight': '1', 'x-mbx-used-weight-1m': '1', 'x-mbx-order-count-10s': '1', 'x-mbx-order-count-1d': '27', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'", 'X-Content-Security-Policy': "default-src 'self'", 'X-WebKit-CSP': "default-src 'self'", 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Cache': 'Error from cloudfront', 'Via': '1.1 9d1f21fface75767578955e1853e754e.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'FRA60-P6', 'X-Amz-Cf-Id': 'EiNO3Ao6mS8EQUd51eGo-6kKO1klvbR_v1qc9mrQc3OFFo_zxwTbXQ=='}, None)
+2024-02-05 23:21:56,754 — app — INFO — binance started ... ... ...
+2024-02-05 23:21:58,535 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:22:00,172 — BinanceWebsocket — INFO — {"result":null,"id":1707162719731}
+2024-02-05 23:23:19,612 — app — INFO — binance started ... ... ...
+2024-02-05 23:23:21,138 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:23:22,739 — BinanceWebsocket — INFO — {"result":null,"id":1707162802314}
+2024-02-05 23:23:25,495 — app — INFO — binance stoped. ................
+2024-02-05 23:24:50,327 — app — INFO — binance started ... ... ...
+2024-02-05 23:24:51,886 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:24:53,539 — BinanceWebsocket — INFO — {"result":null,"id":1707162893064}
+2024-02-05 23:24:57,906 — app — INFO — binance stoped. ................
+2024-02-05 23:25:04,627 — app — INFO — binance stoped. ................
+2024-02-05 23:26:13,202 — app — INFO — binance started ... ... ...
+2024-02-05 23:26:15,011 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:26:16,662 — BinanceWebsocket — INFO — {"result":null,"id":1707162976194}
+2024-02-05 23:26:21,100 — app — INFO — binance stoped. ................
+2024-02-05 23:33:15,587 — __main__ — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:39:48,127 — __main__ — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:40:12,053 — __main__ — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:40:13,656 — __main__ — INFO — {"result":null,"id":1707163813219}
+2024-02-05 23:43:56,001 — __main__ — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:43:58,231 — __main__ — INFO — {"result":null,"id":1707164037763}
+2024-02-05 23:45:27,165 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:45:28,713 — BinanceWebsocket — INFO — {"result":null,"id":1707164128313}
+2024-02-05 23:46:07,012 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:46:23,950 — app — INFO — binance started ... ... ...
+2024-02-05 23:46:32,510 — app — INFO — binance stoped. ................
+2024-02-05 23:46:56,752 — app — INFO — binance started ... ... ...
+2024-02-05 23:46:57,910 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:46:59,489 — BinanceWebsocket — INFO — {"result":null,"id":1707164219078}
+2024-02-05 23:47:04,319 — app — INFO — binance stoped. ................
+2024-02-05 23:47:24,233 — app — INFO — binance started ... ... ...
+2024-02-05 23:47:24,985 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:47:26,642 — BinanceWebsocket — INFO — {"result":null,"id":1707164246154}
+2024-02-05 23:47:41,356 — producer — INFO —  [x] Sent 'Hello World!'
+2024-02-05 23:47:42,108 — __main__ — ERROR — (400, -2010, 'Filter failure: MAX_NUM_ALGO_ORDERS', {'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '58', 'Connection': 'keep-alive', 'Date': 'Mon, 05 Feb 2024 20:17:41 GMT', 'Server': 'nginx', 'x-mbx-uuid': '32f44b21-2739-4f35-b149-7bc2525be41a', 'x-mbx-used-weight': '3', 'x-mbx-used-weight-1m': '3', 'x-mbx-order-count-10s': '1', 'x-mbx-order-count-1d': '28', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'", 'X-Content-Security-Policy': "default-src 'self'", 'X-WebKit-CSP': "default-src 'self'", 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Cache': 'Error from cloudfront', 'Via': '1.1 41f78d12a2f737c8e7f8a05cb4262794.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'FRA60-P6', 'X-Amz-Cf-Id': '_MYSpaIDDOU-Ad-u9tkNafHErlOGkloZRABJDDfI0PVlgOLa7ClN_g=='}, None)
+Traceback (most recent call last):
+  File "/media/iman/mycode2/projects/Binance-spot/consumer.py", line 32, in callback
+    place_order(symbol=symbol, price=price, stopPrice=trigger_price, qty=qty, clientID=clientID)
+  File "/media/iman/mycode2/projects/Binance-spot/main.py", line 36, in place_order
+    response = client.new_order(**params)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/spot/_trade.py", line 68, in new_order
+    return self.sign_request("POST", url_path, params)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 84, in sign_request
+    return self.send_request(http_method, url_path, payload)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 119, in send_request
+    self._handle_exception(response)
+  File "/media/iman/mycode2/projects/Binance-spot/venv/lib/python3.10/site-packages/binance/api.py", line 184, in _handle_exception
+    raise ClientError(
+binance.error.ClientError: (400, -2010, 'Filter failure: MAX_NUM_ALGO_ORDERS', {'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '58', 'Connection': 'keep-alive', 'Date': 'Mon, 05 Feb 2024 20:17:41 GMT', 'Server': 'nginx', 'x-mbx-uuid': '32f44b21-2739-4f35-b149-7bc2525be41a', 'x-mbx-used-weight': '3', 'x-mbx-used-weight-1m': '3', 'x-mbx-order-count-10s': '1', 'x-mbx-order-count-1d': '28', 'Strict-Transport-Security': 'max-age=31536000; includeSubdomains', 'X-Frame-Options': 'SAMEORIGIN', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'Content-Security-Policy': "default-src 'self'", 'X-Content-Security-Policy': "default-src 'self'", 'X-WebKit-CSP': "default-src 'self'", 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Cache': 'Error from cloudfront', 'Via': '1.1 41f78d12a2f737c8e7f8a05cb4262794.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'FRA60-P6', 'X-Amz-Cf-Id': '_MYSpaIDDOU-Ad-u9tkNafHErlOGkloZRABJDDfI0PVlgOLa7ClN_g=='}, None)
+2024-02-05 23:47:49,718 — app — INFO — binance stoped. ................
+2024-02-05 23:50:40,754 — app — INFO — binance started ... ... ...
+2024-02-05 23:50:42,239 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
+2024-02-05 23:51:04,962 — app — INFO — binance started ... ... ...
+2024-02-05 23:51:07,053 — BinanceWebsocket — INFO — Receving listen key : jGT9MoG97TSWlyDTUxAXOJdDohLuASGIpYe9O7lWSNRg1MnGe1Bs7VHo4Wuw
