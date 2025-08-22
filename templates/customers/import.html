@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Import Customers (CSV)</h2>
+<p>Columns: name, mobile, birth_date (YYYY-MM-DD), visit_count, notes, last_visit (YYYY-MM-DD), group</p>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="file" name="file" accept=".csv" required>
+	<button class="btn btn-primary">Upload</button>
+	<a href="/customers/" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

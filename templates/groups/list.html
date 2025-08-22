@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+	<h2>Groups</h2>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Members</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for g in object_list %}
+		<tr>
+			<td><a href="/groups/{{ g.id }}/">{{ g.name }}</a></td>
+			<td>{{ g.description|default:"-" }}</td>
+			<td>{{ g.customers.count }}</td>
+		</tr>
+		{% empty %}
+		<tr><td colspan="3" class="text-center">No groups yet.</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

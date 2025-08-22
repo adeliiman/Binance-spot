@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ object.name }}</h2>
+<div class="row g-3">
+	<div class="col-md-6">
+		<div class="card"><div class="card-body">
+			<p><strong>Mobile:</strong> {{ object.mobile }}</p>
+			<p><strong>Birth date:</strong> {{ object.birth_date }}</p>
+			<p><strong>Group:</strong> {{ object.group }}</p>
+			<p><strong>Visits:</strong> {{ object.visit_count }}</p>
+			<p><strong>Last visit:</strong> {{ object.last_visit }}</p>
+			<p><strong>Notes:</strong> {{ object.notes|default:"-" }}</p>
+			<a href="/customers/{{ object.id }}/edit/" class="btn btn-secondary">Edit</a>
+		</div></div>
+	</div>
+</div>
+{% endblock %}
