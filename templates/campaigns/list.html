@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+	<h2>Campaigns</h2>
+	<a href="/campaigns/create/" class="btn btn-primary">New Campaign</a>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Template</th>
+			<th>Status</th>
+			<th>Scheduled</th>
+			<th>Sent</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for c in object_list %}
+		<tr>
+			<td>{{ c.title }}</td>
+			<td>{{ c.template.name }}</td>
+			<td>{{ c.status }}</td>
+			<td>{{ c.scheduled_for }}</td>
+			<td>{{ c.sent_date }}</td>
+			<td>
+				<a class="btn btn-sm btn-secondary" href="/campaigns/{{ c.id }}/preview/">Preview</a>
+				<a class="btn btn-sm btn-success" href="/campaigns/{{ c.id }}/send/">Send</a>
+			</td>
+		</tr>
+		{% empty %}
+		<tr><td colspan="6" class="text-center">No campaigns yet.</td></tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

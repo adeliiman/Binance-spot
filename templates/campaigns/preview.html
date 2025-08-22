@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Preview: {{ campaign.title }}</h2>
+<div class="card">
+	<div class="card-body">
+		<pre class="mb-0">{{ body }}</pre>
+	</div>
+</div>
+<a class="btn btn-success mt-3" href="/campaigns/{{ campaign.id }}/send/">Send Now</a>
+<a class="btn btn-secondary mt-3" href="/campaigns/">Back</a>
+{% endblock %}

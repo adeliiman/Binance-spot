@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ object.name }}</h2>
+<p class="text-muted">{{ object.description }}</p>
+<div class="row">
+	<div class="col-md-6">
+		<h5>Members</h5>
+		<ul id="member-list" class="list-group">
+			{% for c in object.customers.all %}
+			<li class="list-group-item" draggable="true" data-id="{{ c.id }}">{{ c.name }} ({{ c.mobile }})</li>
+			{% empty %}
+			<li class="list-group-item">No members.</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<h5>Move to another group</h5>
+		<ul class="list-group" id="groups-target">
+			{% for g in object_list %}
+			<li class="list-group-item drop-target" data-id="{{ g.id }}">{{ g.name }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+<script>
+(function(){
+	let draggedId = null;
+	document.querySelectorAll('#member-list [draggable=true]').forEach(el => {
+		el.addEventListener('dragstart', e => { draggedId = el.dataset.id; });
+	});
+	document.querySelectorAll('.drop-target').forEach(target => {
+		target.addEventListener('dragover', e => e.preventDefault());
+		target.addEventListener('drop', async e => {
+			e.preventDefault();
+			const groupId = target.dataset.id;
+			const form = new FormData();
+			form.append('customer_id', draggedId);
+			form.append('group_id', groupId);
+			const res = await fetch('/groups/reassign/', { method: 'POST', body: form, headers: { 'X-CSRFToken': window.csrfToken }});
+			if (res.ok) { location.reload(); }
+		});
+	});
+})();
+</script>
+{% endblock %}
